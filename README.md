@@ -61,3 +61,27 @@ Convert any negative delays to 0.
 Which hour of the day has the highest average delay?
 Does the day of the week make a difference in the delay amount?
 Does the month make a difference in the delay amount?
+
+-------
+# Data Preparation Exercises
+
+The end result of this exercise should be a file named prepare.py.
+
+# Using your store items data:
+
+## Convert date column to datetime format.
+## Plot the distribution of sale_amount and item_price.
+## Set the index to be the datetime variable.
+## Add a 'month' and 'day of week' column to your dataframe.
+## Add a column to your dataframe, sales_total, which is a derived from sale_amount (total items) and item_price.
+## Make sure all the work that you have done above is reproducible. That is, you should put the code above into separate functions and be able to re-run the functions and get the same results.
+
+
+# Using the OPS data acquired in the Acquire exercises opsd_germany_daily.csv, complete the following:
+
+## Convert date column to datetime format.
+## Plot the distribution of each of your variables.
+## Set the index to be the datetime variable.
+## Add a month and a year column to your dataframe.
+## Fill any missing values.
+## Make sure all the work that you have done above is reproducible. That is, you should put the code above into separate functions and be able to re-run the functions and get the same results.
