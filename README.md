@@ -21,3 +21,43 @@ The end result of this exercise should be a file named acquire.py.
 
 ------------
 # Working with Time Series Data: Exercises
+> For all of the datasets below, examine the data types of each column, ensure that the dates are in the proper format, and set the dataframe's index to the date column as appropriate.
+ 
+For this exercise you'll need to install a library that will provide us access to some more datasets:
+
+`pip install vega_datasets`
+You can use this library like so:
+from vega_datasets import data
+data.sf_temps()
+
+## Use the above (`sf_temps`) dataset for the exercises below:
+
+## Resample by the day and take the average temperature. Visualize the average temperature over time.
+
+## Write the code necessary to visualize the minimum temperature over time.
+## Write the code necessary to visualize the maximum temperature over time.
+## Which month is the coldest, on average?
+## Which month has the highest average temperature?
+## Resample by the day and calculate the min and max temp for the day (Hint: .agg(['min', 'max'])). 
+* Use this resampled dataframe to calculate the change in temperature for the day
+## Which month has the highest daily temperature variability?
+
+#  Bonus: Visualize the daily min, average, and max temperature over time on a single line plot, i.e. the min, average, and maximum temperature should be 3 seperate lines.
+
+from vega_datasets import data
+data.seattle_weather()
+Use the dataset to answer the following questions:
+
+Which year and month combination has the highest amount of precipitation?
+Visualize the amount of monthly precipitation over time.
+Visualize the amount of wind over time. Choose a time interval you think is appropriate.
+Which year-month combination is the windiest?
+What's the sunniest year? (Hint: which day has the highest number of days where weather == sun?)
+In which month does it rain the most?
+Which month has the most number of days with a non-zero amount of precipitation?
+
+data.flights_20k()
+Convert any negative delays to 0.
+Which hour of the day has the highest average delay?
+Does the day of the week make a difference in the delay amount?
+Does the month make a difference in the delay amount?
