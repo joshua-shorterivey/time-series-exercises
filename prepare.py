@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import requests
 import acquire
 
 def summarize(df, data='sales'):
@@ -11,17 +10,16 @@ def summarize(df, data='sales'):
 
     if data == 'sales':
         print(f"""
-        Shape: {df.shape}\n
+        Info: {df.info()}\n
         Nulls:\n{df.isnull().sum()}\n
-        Unique Stores: {df.store_id.unique()}\n
-        Unique Items: {df.item_id.unique()}\n
+        Unique Stores: {df.store_address.unique()}\n
+        Unique Items: {df.item_name.unique()}\n
         Number of Sale Days: {df.index.nunique()}\n
         Sales Date Range: {df.index.min(), df.index.max()}\n
         """)
     elif data == 'ops':
         print(f"""
         {df.info()}
-        Shape: {df.shape}\n
         Nulls:\n{df.isnull().sum()}\n
         """)
 
@@ -54,6 +52,7 @@ def prepare (df, data='sales'):
         df.sale_date = pd.to_datetime(df.sale_date, format='%a, %d %b %Y %H:%M:%S %Z')
         df.sale_date = df.sale_date.dt.strftime('%Y-%m-%d').astype('datetime64')
         df = df.set_index('sale_date')
+        df = df.drop(columns=['sale_id', 'store_id', 'item_id'])
     elif data == 'ops':
         df.Date = pd.to_datetime(df.Date)
         df = df.set_index('Date')
